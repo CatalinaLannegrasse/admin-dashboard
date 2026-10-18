@@ -19,14 +19,6 @@ body {
     min-height: 100vh;
 }
 
-/* --- 2. Header Styling --- */
-.header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-}
-
 /* --- 3. Main Content Styling --- */
 .main-content {
     background-color: #e2e8f0; /* Light grayish background for the dashboard body */
@@ -98,4 +90,117 @@ body {
 /* Push secondary nav down or create a separation */
 .main-nav {
     margin-bottom: 60px; /* Space before settings/support block */
+}
+
+/* --- Header Layout --- */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    
+    /* Use grid to stack the top and bottom rows */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Top Row Styling --- */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 60%;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 20px;
+    height: 35px;
+    padding: 0 15px;
+}
+
+.profile-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+/* --- Bottom Row Styling --- */
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.greeting-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.greeting-sub {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.greeting-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* --- Action Buttons --- */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #1992d4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #1479af;
+}
+
+/* --- Utility / Avatars --- */
+.header-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.small-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.large-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
 }
