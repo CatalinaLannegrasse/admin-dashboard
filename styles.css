@@ -6,107 +6,95 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0b0f19;
+    color: #e2e8f0;
 }
 
 /* --- Dashboard Grid Layout --- */
 .dashboard-container {
     display: grid;
-    /* Give the sidebar a slightly wider, more comfortable column size */
     grid-template-columns: 280px 1fr;
-    /* Explicitly define the header row height (e.g., 150px like the design) */
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: auto 1fr;
+    /* Uses min-height so it fills the screen by default but can expand smoothly if needed */
     min-height: 100vh;
+    width: 100%;
 }
 
-/* --- 3. Main Content Styling --- */
-.main-content {
-    background-color: #e2e8f0; /* Light grayish background for the dashboard body */
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    padding: 32px; /* Adds nice breathing room for our cards later */
-}
-
-/* --- Sidebar Internal Layout --- */
+/* --- 1. Sidebar Styling (Arcane Zaun Blue / Hextech Vibe) --- */
 .sidebar {
-    background-color: #1992d4;
-    color: white;
+    background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+    color: #f8fafc;
     grid-row: 1 / 3; 
     grid-column: 1 / 2;
     
-    /* Use grid to stack branding and navigation nicely */
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Branding top, space in middle, secondary nav bottom */
-    padding: 20px 16px;
-    font-size: 1rem;
+    grid-template-rows: auto 1fr auto;
+    padding: 24px 16px;
+    font-size: 1.05rem;
     font-weight: 500;
+    border-right: 2px solid #3b82f6;
+    height: 100%;
 }
 
-/* Branding Section Styles */
 .sidebar-brand {
     display: flex;
     align-items: center;
-    gap: 14px;
-    font-size: 1rem;
+    gap: 12px;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding-left: 8px;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
 }
 
 .brand-icon {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1); /* Turns dark SVGs pure white */
-}
-.icon {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1); /* Turns dark SVGs pure white */
+    font-size: 1.8rem;
 }
 
-/* Navigation Lists Styles */
 .nav-links {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Space between links */
+    gap: 12px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: #cbd5e1;
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 8px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    background-color: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    transform: translateX(4px);
 }
 
-/* Push secondary nav down or create a separation */
 .main-nav {
-    margin-bottom: 60px; /* Space before settings/support block */
+    margin-bottom: 40px;
 }
 
-/* --- Header Layout --- */
+/* --- 2. Header Styling --- */
 .header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
+    background-color: #111827;
+    border-bottom: 1px solid #1f2937;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     
-    /* Use grid to stack the top and bottom rows */
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 15px 40px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    grid-template-rows: auto auto;
+    padding: 16px 40px;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Top Row Styling --- */
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -128,11 +116,18 @@ body {
 
 .search-input {
     width: 100%;
-    background-color: #e2e8f0;
-    border: none;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: white;
     border-radius: 20px;
-    height: 35px;
-    padding: 0 15px;
+    height: 36px;
+    padding: 0 16px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 .profile-nav {
@@ -142,7 +137,6 @@ body {
     font-weight: bold;
 }
 
-/* --- Bottom Row Styling --- */
 .header-bottom {
     display: flex;
     justify-content: space-between;
@@ -152,55 +146,225 @@ body {
 .greeting-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .greeting-sub {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    color: #9ca3af;
     font-weight: bold;
 }
 
 .greeting-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #f9fafb;
 }
 
-/* --- Action Buttons --- */
+/* --- Action Buttons (Hextech Blue/Pink Glow) --- */
 .action-buttons {
     display: flex;
-    gap: 20px;
+    gap: 16px;
 }
 
 .btn {
-    background-color: #1992d4;
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 8px 25px;
+    padding: 6px 22px;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: filter 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
 }
 
 .btn:hover {
-    background-color: #1479af;
+    filter: brightness(1.2);
+    transform: translateY(-1px);
 }
 
-/* --- Utility / Avatars --- */
+/* --- 3. Main Content Layout (Flexible Resizing) --- */
+.main-content {
+    background-color: #0b0f19;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    padding: 24px 32px;
+    
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #f3f4f6;
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Allows cards to dynamically wrap and resize based on window width */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* --- Cards Styling --- */
+.card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Jinx Gold/Hextech Yellow Accent Border */
+.project-card {
+    border-left: 6px solid #f59e0b; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: #38bdf8;
+}
+
+.project-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.project-card p {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    line-height: 1.35;
+}
+
+/* --- Card Icons --- */
+.card-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.card-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.card-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(0.8);
+    transition: filter 0.2s ease;
+}
+
+.card-icons button:hover .card-icon {
+    filter: brightness(0) invert(1) drop-shadow(0 0 4px #38bdf8);
+}
+
+/* --- Widgets Section --- */
+.sidebar-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.widget-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+}
+
+.announcement-item h4 {
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+    color: #f3f4f6;
+}
+
+.announcement-item p {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.announcement-card hr {
+    border: none;
+    border-top: 1px solid #1f2937;
+}
+
+/* --- Trending Section --- */
+.trending-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trending-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-info .handle {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #f3f4f6;
+}
+
+.trending-info .description {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* --- Utilities / Avatars --- */
+.icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
 .header-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(0.8);
 }
 
 .small-avatar {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    border: 1px solid #38bdf8;
 }
 
 .large-avatar {
-    width: 55px;
-    height: 55px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    border: 2px solid #38bdf8;
 }

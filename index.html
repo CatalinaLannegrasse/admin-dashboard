@@ -3,74 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Arcane Edition</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Admin Dashboard</title>
 </head>
 <body>
     <div class="dashboard-container">
         
-<!-- 1. Sidebar Container -->
-<aside class="sidebar">
-    <!-- Branding / Logo Section -->
-    <div class="sidebar-brand">
-        <!-- You can use an SVG or inline icon/emoji here for now -->
-        <img src="images/view-dashboard.svg" alt="Dashboard Icon" class="brand-icon">
-        <h1 class="brand-title">Dashboard</h1>
-    </div>
-
-    <!-- Main Navigation Links -->
-    <ul class="nav-links main-nav">
-        <li><a href="#"><img src="images/home.svg" alt="Home icon" class="icon"> Home</a></li>
-        <li><a href="#"><img src="images/account.svg" alt="Home icon" class="icon"> Profile</a></li>
-        <li><a href="#"><img src="images/message.svg" alt="Home icon" class="icon"> Messages</a></li>
-        <li><a href="#"><img src="images/history.svg" alt="Home icon" class="icon"> History</a></li>
-        <li><a href="#"><img src="images/file-multiple.svg" alt="Home icon" class="icon"> Tasks</a></li>
-        <li><a href="#"><img src="images/account-multiple.svg" alt="Home icon" class="icon"> Communities</a></li>
-    </ul>
-
-    <!-- Secondary Navigation Links (Settings, Support, Privacy) -->
-    <ul class="nav-links secondary-nav">
-        <li><a href="#"><img src="images/cog.svg" alt="Home icon" class="icon"> Settings</a></li>
-        <li><a href="#"><img src="images/help-box.svg" alt="Home icon" class="icon"> Support</a></li>
-        <li><a href="#"><img src="images/security.svg" alt="Home icon" class="icon"> Privacy</a></li>
-    </ul>
-</aside>
-
-<!-- 2. Header Container -->
-<header class="header">
-    <!-- Top Row: Search & User Profile -->
-    <div class="header-top">
-        <div class="search-container">
-            <button type="submit" class="search-btn"><img src="images/magnify.svg" alt="Search" class="header-icon"></button>
-            <input type="text" class="search-input">
-        </div>
-        <div class="profile-nav">
-            <a href="#" class="notification-bell"><img src="images/bell-ring-outline.svg" alt="Notifications" class="header-icon"></a>
-            <img src="images/jinx.webp" alt="User Avatar" class="avatar small-avatar">
-            <span class="profile-name">Jinx</span>
-        </div>
-    </div>
-
-    <!-- Bottom Row: Greeting & Action Buttons -->
-    <div class="header-bottom">
-        <div class="greeting-container">
-            <img src="images/jinx.webp" alt="User Avatar" class="avatar large-avatar">
-            <div class="greeting-text">
-                <p class="greeting-sub">Hi there,</p>
-                <h2 class="greeting-name">Jinx (@notPowder)</h2>
+        <!-- 1. Sidebar Container -->
+        <aside class="sidebar">
+            <!-- Branding / Logo Section -->
+            <div class="sidebar-brand">
+            <h1 class="brand-title">Dashboard</h1>
             </div>
-        </div>
-        <div class="action-buttons">
-            <button class="btn">New</button>
-            <button class="btn">Upload</button>
-            <button class="btn">Share</button>
-        </div>
-    </div>
-</header>
+
+            <!-- Main Navigation Links -->
+            <ul class="nav-links main-nav">
+                <li><a href="#"><img src="images/home.svg" alt="Home" class="icon"> Home</a></li>
+                <li><a href="#"><img src="images/account.svg" alt="Profile" class="icon"> Profile</a></li>
+                <li><a href="#"><img src="images/message.svg" alt="Messages" class="icon"> Messages</a></li>
+                <li><a href="#"><img src="images/history.svg" alt="History" class="icon"> History</a></li>
+                <li><a href="#"><img src="images/file-multiple.svg" alt="Tasks" class="icon"> Tasks</a></li>
+                <li><a href="#"><img src="images/account-multiple.svg" alt="Communities" class="icon"> Communities</a></li>
+            </ul>
+
+            <!-- Secondary Navigation Links -->
+            <ul class="nav-links secondary-nav">
+                <li><a href="#"><img src="images/cog.svg" alt="Settings" class="icon"> Settings</a></li>
+                <li><a href="#"><img src="images/help-box.svg" alt="Support" class="icon"> Support</a></li>
+                <li><a href="#"><img src="images/security.svg" alt="Privacy" class="icon"> Privacy</a></li>
+            </ul>
+        </aside>
+
+        <!-- 2. Header Container -->
+        <header class="header">
+            <!-- Top Row: Search & User Profile -->
+            <div class="header-top">
+                <div class="search-container">
+                    <button type="submit" class="search-btn"><img src="images/magnify.svg" alt="Search" class="header-icon"></button>
+                    <input type="text" class="search-input" placeholder="Search Zaun or Piltover...">
+                </div>
+                <div class="profile-nav">
+                    <a href="#" class="notification-bell"><img src="images/bell-ring-outline.svg" alt="Notifications" class="header-icon"></a>
+                    <img src="images/jinx.jpeg" alt="User Avatar" class="avatar small-avatar">
+                    <span class="profile-name">Jinx</span>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Greeting & Action Buttons -->
+            <div class="header-bottom">
+                <div class="greeting-container">
+                    <img src="images/jinx.jpeg" alt="User Avatar" class="avatar large-avatar">
+                    <div class="greeting-text">
+                        <p class="greeting-sub">Hi there,</p>
+                        <h2 class="greeting-name">Jinx (@notPowder)</h2>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">New</button>
+                    <button class="btn">Upload</button>
+                    <button class="btn">Share</button>
+                </div>
+            </div>
+        </header>
 
         <!-- 3. Main Content Container -->
         <main class="main-content">
-            <!-- Projects, announcements, and trending sections will go here -->
+            
+            <!-- Left Column: Projects Section -->
+            <div class="projects-section">
+                <h2 class="section-title">Your Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Hexgate Overload</h3>
+                            <p>Rewiring the core hextech gates to cause a tiny, harmless amount of localized chaos across Piltover.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Fishbones Launcher</h3>
+                            <p>Upgrading rocket payloads with extra-bright paint and extra explosive surprises for the Enforcers.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Zaun Chem-Tank</h3>
+                            <p>Brewing a fresh batch of bubbling green tonic down in the undercity labs. Handle with extreme care.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Firelight Hideout Map</h3>
+                            <p>Scouting hoverboard routes and tracking safe zones across the abandoned industrial districts.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Shimmer Recipe v4</h3>
+                            <p>Refining the purple glow to make muscles stronger and tempers significantly shorter.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6 -->
+                    <div class="card project-card">
+                        <div>
+                            <h3>Academy Security Hack</h3>
+                            <p>Bypassing Professor Heimerdinger's laser grid using pure ingenuity and a wrench.</p>
+                        </div>
+                        <div class="card-icons">
+                            <button><img src="images/star-plus-outline.svg" alt="Star" class="card-icon"></button>
+                            <button><img src="images/eye-plus-outline.svg" alt="View" class="card-icon"></button>
+                            <button><img src="images/source-fork.svg" alt="Fork" class="card-icon"></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Column: Widgets (Announcements & Trending) -->
+            <div class="sidebar-widgets">
+                
+                <!-- Announcements Widget -->
+                <div class="widget-section">
+                    <h2 class="section-title">Announcements</h2>
+                    <div class="card announcement-card">
+                        <div class="announcement-item">
+                            <h4>Piltover Council Meeting</h4>
+                            <p>Emergency session called regarding unexpected fireworks near the progress day monument.</p>
+                        </div>
+                        <hr>
+                        <div class="announcement-item">
+                            <h4>Under City Curfew</h4>
+                            <p>Enforcers patrolling lower bridge levels starting at midnight. Stay off the pipes.</p>
+                        </div>
+                        <hr>
+                        <div class="announcement-item">
+                            <h4>Hextech Ban</h4>
+                            <p>Unauthorized modifications to gem-powered machinery are strictly prohibited by order of the council.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trending Widget -->
+                <div class="widget-section">
+                    <h2 class="section-title">Trending</h2>
+                    <div class="card trending-card">
+                        <div class="trending-item">
+                            <img src="images/ekko.jpeg" alt="User" class="avatar small-avatar">
+                            <div class="trending-info">
+                                <span class="handle">@ekko</span>
+                                <span class="description">Firelight Leader</span>
+                            </div>
+                        </div>
+                        <div class="trending-item">
+                            <img src="images/vi.webp" alt="User" class="avatar small-avatar">
+                            <div class="trending-info">
+                                <span class="handle">@vi</span>
+                                <span class="description">Enforcer Puncher</span>
+                            </div>
+                        </div>
+                        <div class="trending-item">
+                            <img src="images/caitlyn.webp" alt="User" class="avatar small-avatar">
+                            <div class="trending-info">
+                                <span class="handle">@caitlyn</span>
+                                <span class="description">Top Sheriff</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </main>
 
     </div>
