@@ -368,3 +368,70 @@ body {
     border-radius: 50%;
     border: 2px solid #38bdf8;
 }
+
+/* --- Responsive Mobile & Tablet Adjustments --- */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the dashboard container into a single column */
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    /* 2. Hide or adapt the sidebar so it doesn't take up the whole screen width */
+    .sidebar {
+        display: none; /* Optional: Hide sidebar on mobile, or style it as a top/bottom bar */
+    }
+
+    /* 3. Make the header stack cleanly and fit mobile screens */
+    .header {
+        grid-row: auto;
+        grid-column: 1 / 2;
+        padding: 16px 20px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .header-bottom {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .action-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 4. Stack the main content area (Projects + Widgets) vertically */
+    .main-content {
+        grid-row: auto;
+        grid-column: 1 / 2;
+        grid-template-columns: 1fr; /* Single column layout */
+        padding: 16px;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* 5. Force project cards to display 1 per row on mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
